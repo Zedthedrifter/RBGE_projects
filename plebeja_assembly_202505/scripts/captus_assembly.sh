@@ -9,7 +9,7 @@ function captus_assembly {
 
 INDIR=$1
 
-cd $WORKDIR/results
+cd $INDIR/.. #got to the directory just above the result directory in use
 captus clean -r $INDIR #this will generate RESULT2
 captus assemble -r $WORKDIR/results/01_clean_reads #the general structure of captus output:RESULT3
 cd - #go back to the script directory
@@ -20,6 +20,7 @@ function captus_extract {
 INDIR=$1
 REF=$2
 
+cd $INDIR/..
 captus extract -a $INDIR -n $REF
 }
 
@@ -41,18 +42,18 @@ DATA=$WORKDIR/inputs
 RESULT1=$WORKDIR/results/00_qctrimm 
 RESULT2=$WORKDIR/results/01_clean_reads #created by captus
 RESULT3=$WORKDIR/results/02_assemblies #created by captus
+RESULT3=$WORKDIR/results/03_extractions
 #$WORKDIR/results/
-#$WORKDIR/results/
-#$WORKDIR/results/
-#$WORKDIR/results/
+
 
 #USAGES
 #=============================================
 #make work directories
 
 
-captus_assembly $RESULT1
-captus_extract $RESULT3 $REF
+#captus_assembly $RESULT1
+captus_extract $RESULT3 $REF #reference based assembly
+
 }
 
 main
