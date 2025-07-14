@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name="Bcassembly" 
 #SBATCH --export=ALL
-#SBATCH --partition=short
+#SBATCH --partition=medium
 #SBATCH --mem=198G 
 
 #
@@ -44,14 +44,11 @@ RESULT2=$WORKDIR/results/01_clean_reads #created by captus
 RESULT3=$WORKDIR/results/02_assemblies #created by captus
 RESULT3=$WORKDIR/results/03_extractions
 #$WORKDIR/results/
-
+mkdir $RESULT3
 
 #USAGES
 #=============================================
-#make work directories
-
-
-#captus_assembly $RESULT1
+captus_assembly $RESULT1
 captus_extract $RESULT3 $REF #reference based assembly
 
 }
