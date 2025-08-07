@@ -1,0 +1,17 @@
+Hi Zed,
+Following on from yesterday's meeting, here is the list of things to do as part of tidying up the BGE dataset.
+
+1. ‎merge data from 'a' and 'b' files of duplicated samples, then redo assemblies etc.  For Potamogeton: SEPA14a & SEPA14b; SEPA10a & SEPA10b.  For Salix: CIN3a & CIN3b; PEN2a &PEN2b; repens4a, repens4b, repens4c & repens4d.  For info, the Potamogeton duplicates were duplicate libraries (with different indices) that I made from the same DNA extraction; the Salix duplicates appear to be because the same library was run on multiple flow cells (in order for Novogene to generate the volume of data requested).
+2. calculate read counts for each sample of de-duplicated reads that pass filtering; add to summary spreadsheet
+3. add ploidy levels and genome size estimates to summary spreadsheet
+4. map reads back to a set of target genes (Angiosperm353?) from assemblies to estimate the coverage we have obtained prior to deciding if we need to re-sequence some samples (esp. Salix).
+5.following on from Alex's comments below, check that assemblies of the polyploids look like they are polyploid assemblies or whether orthologs from the different genome copies may have been collapsed, which could give us the result seen in the trees where samples cluster not by species but by 'genome copy'
+6. check for plastid loci (from assemblies, genbank) to find a locus that can help with simple barcoding to confirm sample swaps
+7. re-extract and barcode the small number of Potamogeton samples to confirm what looks like mis-labelling of Connie's DNA extraction tubes (SEPA_4 & SEPA_14; PG1 & PC1; PAL1 & PPR1; E)
+8. find vouchers to double check determinations of some P. pusilla samples (CSN5; PTRI1)
+
+I can do #3 & #7, plus I'll do a little bit of digging online for #6.  Michelle was on the case for #8.  I think the rest are your domain.  Could you put your most recent versions of the summary files into the 'WP12.8 Connie' folder so we can add in the relevant info (read counts, genome sizes etc).
+And if I've forgotten something, add it to the list!
+
+Cheers,
+James
