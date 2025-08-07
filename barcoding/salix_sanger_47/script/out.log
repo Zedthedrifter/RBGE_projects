@@ -1,0 +1,90 @@
+
+================== ASTRAL ===================== 
+
+This is ASTRAL version 5.7.8
+Gene trees are treated as unrooted
+28 trees read from /home/zchen/scratch/Barcoding_km/barcoding_sanger_47/results/phy11_easy353_high_resolution_phy/rsl_6genes.in.treefile
+index0
+All output trees will be *arbitrarily* rooted at Arbu2
+
+======== Running the main analysis
+Number of taxa: 46 (46 species)
+Taxa: [Arbu2, Herb8, Herb10, Herb7, Herb9, Herb13, Lapp6, Myri2, Lapp8, Arbu6, Myri4, Lapp7, Arbu4, Lana2, Lana3, Lana9, Lana5, Lana10, Lana7, Lana8, Lana6, Myri3, Reti2, Reti9, Reti10, Reti5, Reti8, Reti6, Reti7, Reti4, Arbu3, Lapp3, Lapp5, Lapp2, Lapp4, Arbu9, Lapp9, Arbu5, Myri5, Herb12, Myri6, Myri7, Myri1, Reti3, Arbu8, Arbu7]
+Taxon occupancy: {Reti9=28, Reti8=28, Arbu3=28, Arbu2=28, Herb10=28, Herb13=28, Herb12=26, Reti10=28, Lapp9=28, Arbu5=28, Reti3=26, Arbu4=28, Reti2=28, Arbu7=26, Arbu6=28, Reti7=28, Lapp5=28, Arbu9=28, Lapp6=28, Lana10=28, Reti6=28, Arbu8=26, Lapp7=28, Reti5=28, Lapp8=28, Reti4=28, Lapp2=28, Myri7=26, Lapp3=28, Lapp4=28, Myri4=28, Myri3=28, Myri6=26, Myri5=26, Herb9=28, Herb7=28, Lana8=28, Herb8=28, Lana9=28, Lana5=28, Lana6=28, Lana7=28, Lana2=28, Lana3=28, Myri2=28, Myri1=26}
+Number of gene trees: 28
+2 trees have missing taxa
+Calculating quartet distance matrix (for completion of X)
+Species tree distances calculated ...
+Will attempt to complete bipartitions from X before adding using a distance matrix.
+Building set of clusters (X) from gene trees 
+------------------------------
+gradient0: 1023
+Number of Clusters after addition by distance: 1023
+calculating extra bipartitions to be added at level 1 ...
+Adding to X using resolutions of greedy consensus ...
+Limit for sigma of degrees:1200
+polytomy size limit : 9
+discarded polytomies:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 5, 5, 5, 5, 6, 6, 7, 7, 8, 8, 8, 9]
+Threshold 0.0:
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 1029
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+Threshold 0.01:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+Threshold 0.02:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+Threshold 0.05:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1035
+Threshold 0.1:
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 1037
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1039
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1039
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 1043
+polytomy of size 3; rounds with additions with at least 5 support: 2; clusters: 1047
+polytomy of size 4; rounds with additions with at least 5 support: 3; clusters: 1057
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 1059
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1059
+polytomy of size 5; rounds with additions with at least 5 support: 2; clusters: 1073
+Threshold 0.2:
+polytomy of size 6; rounds with additions with at least 5 support: 0; clusters: 1077
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 1077
+polytomy of size 6; rounds with additions with at least 5 support: 1; clusters: 1089
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 1089
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 1101
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 1105
+polytomy of size 7; rounds with additions with at least 5 support: 1; clusters: 1113
+Threshold 0.3333333333333333:
+polytomy of size 8; rounds with additions with at least 5 support: 0; clusters: 1115
+polytomy of size 8; rounds with additions with at least 5 support: 0; clusters: 1115
+polytomy of size 8; rounds with additions with at least 5 support: 0; clusters: 1115
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 1115
+polytomy of size 7; rounds with additions with at least 5 support: 0; clusters: 1115
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 1115
+polytomy of size 9; rounds with additions with at least 5 support: 0; clusters: 1121
+max k is :6
+Number of Clusters after addition by greedy: 1121
+gradient0 in heuristiic: 1121
+partitions formed in 0.387 secs
+Dynamic Programming starting after 0.387 secs
+Using tree-based weight calculation.
+Using polytree-based weight calculation.
+Polytree max score: 4390440
+Polytree building time: 0.008 seconds.
+Number of quartet trees in the gene trees: 4390440
+Size of largest cluster: 46
+Greedy score: 3123764
+estimationFactor: 1.405496702055597
+Sub-optimal score: 3209306
+Total Number of elements weighted: 2123
+Normalized score (portion of input quartet trees satisfied before correcting for multiple individuals): 0.7493850274687731
+Optimization score: 3290130
+Optimal tree inferred in 0.501 secs.
+(Lapp9,(Lapp3,(Lapp7,(Lapp2,(Lapp6,(Lapp5,(Lapp8,(Lapp4,((Arbu2,((Arbu3,Arbu5),(Arbu7,(Arbu6,(Arbu8,(Arbu4,Arbu9)))))),(((Herb10,Herb7),(Herb13,(Herb8,(Herb9,Herb12)))),((Myri3,(Myri2,((Myri4,Myri1),(Myri5,(Myri6,Myri7))))),((((Lana2,Lana10),(Lana3,Lana7)),(Lana9,(Lana6,(Lana5,Lana8)))),(Reti3,(Reti4,(Reti7,(Reti5,(Reti10,(Reti9,(Reti6,(Reti2,Reti8))))))))))))))))))));
+Final quartet score is: 3290130
+Final normalized quartet score is: 0.7493850274687731
+Extended species tree:
+(Arbu2,(((Arbu3,Arbu5)0.97:0.36915387463647625,(Arbu7,(Arbu6,(Arbu8,(Arbu4,Arbu9)0.72:0.19794687469703537)0.53:0.13580154115906176)0.67:0.13987486654669767)0.39:0.008224612784317388)0.44:0.029637469128806382,((((Herb10,Herb7)1:0.9206103930186712,(Herb13,(Herb8,(Herb9,Herb12)0.7:0.14878182767410325)0.6:0.1105738626281586)0.48:0.05492966203093433)1:0.7121850141784833,((Myri3,(Myri2,((Myri4,Myri1)0.9:0.2588924301529912,(Myri5,(Myri6,Myri7)0.62:0.14878182767410325)0.87:0.24696848489135878)0.39:0.025317807984289672)0.63:0.10974889351771054)1:0.49949368184888243,((((Lana2,Lana10)0.48:0.06386261709021035,(Lana3,Lana7)0.69:0.13249703104364738)0.44:0.03274445180145451,(Lana9,(Lana6,(Lana5,Lana8)0.79:0.2108610597034547)0.46:0.06904979242636938)0.43:0.02783388423477322)1:2.023373694546893,(Reti3,(Reti4,(Reti7,(Reti5,(Reti10,(Reti9,(Reti6,(Reti2,Reti8)0.95:0.3837807403710749)0.67:0.14481307254946743)0.48:0.06650288265038655)0.48:0.048800940089560936)0.73:0.14811236013815096)0.92:0.2756554692859812)0.98:0.41744129915488026)1:1.8787708462176846)0.37:0.012916376015687596)0.78:0.1720370408866488)1:0.8243532604990877,(Lapp4,(Lapp8,(Lapp5,(Lapp6,(Lapp2,(Lapp7,(Lapp3,Lapp9)0.6:0.11072102165935008)0.91:0.2855593391189949)0.7:0.1708575864463451)0.73:0.16112537761582713)0.78:0.1927946220071179)0.44:0.05646472901183315)1:0.6605957462318652)1:0.5238669851458062));
+Weight calculation took 0.057283313 secs
+ASTRAL finished in 0.582 secs
