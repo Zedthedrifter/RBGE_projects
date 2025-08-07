@@ -1,0 +1,94 @@
+
+================== ASTRAL ===================== 
+
+This is ASTRAL version 5.7.8
+Gene trees are treated as unrooted
+40 trees read from /home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_10genes.in.treefile
+index0
+All output trees will be *arbitrarily* rooted at P_praelongus_1
+
+======== Running the main analysis
+Number of taxa: 104 (104 species)
+Taxa: [P_praelongus_1, P_praelongus_2, P_praelongus_3, P_alpinus_5, P_praelongus_4, P_natans_4, P_polygonifolius_5, P_polygonifolius_2, P_polygonifolius_1, P_polygonifolius_3, P_polygonifolius_4, P_coloratus_4, P_coloratus_3, P_coloratus_2, P_coloratus_1, P_crispus_5, P_crispus_2, P_crispus_4, P_crispus_1, P_gramineus_4, P_rutilus_4, P_rutilus_2, P_rutilus_3, P_rutilus_5, P_rutilus_1, P_pusillus_1, P_pusillus_3, P_pusillus_4, P_friesii_2, P_friesii_3, P_friesii_4, P_pusillus_5, P_obtusifolius_1, P_obtusifolius_2, P_obtusifolius_3, P_obtusifolius_4, P_obtusifolius_5, P_compressus_4, P_compressus_2, P_compressus_1, P_compressus_5, P_compressus_3, P_acutifolius_1, P_acutifolius_3, P_acutifolius_4, P_acutifolius_2, P_berchtoldii_4, P_berchtoldii_2, P_berchtoldii_7, P_berchtoldii_3, P_berchtoldii_1, P_trichoides_5, P_trichoides_1, P_trichoides_3, P_trichoides_2, P_trichoides_4, Undetermined, P_natans_7, P_natans_6, P_natans_1, P_natans_3, P_natans_5, P_natans_2, P_alpinus_6, P_alpinus_1, P_alpinus_4, P_epihydrus_1, P_perfoliatus_6, S_filiformis_2, S_filiformis_1, S_pectinata_4, S_pectinata_1, S_pectinata_2, P_pusillus_2, P_gramineus_1, P_gramineus_5, P_gramineus_3, P_crispus_3, P_lucens_1, P_lucens_3, P_alpinus_3, P_lucens_5, P_lucens_4, P_lucens_2, P_gramineus_2, P_perfoliatus_2, P_perfoliatus_3, P_perfoliatus_4, P_nodosus_1, P_nodosus_3, P_nodosus_2, P_nodosus_4, P_perfoliatus_1, P_perfoliatus_5, P_alpinus_2, S_filiformis_4, P_friesii_1, P_pusillus_6, P_berchtoldii_6, S_filiformis_3, S_pectinata_5, S_pectinata_3, S_filiformis_5, P_berchtoldii_5]
+Taxon occupancy: {P_berchtoldii_2=40, P_berchtoldii_1=40, P_berchtoldii_6=29, P_berchtoldii_5=26, P_berchtoldii_4=40, P_berchtoldii_3=40, P_berchtoldii_7=40, P_friesii_3=39, P_compressus_4=39, P_friesii_4=36, P_compressus_5=36, P_compressus_1=32, P_compressus_2=34, P_compressus_3=36, P_lucens_3=40, P_lucens_2=39, P_lucens_1=40, P_lucens_5=40, P_lucens_4=40, P_praelongus_4=40, P_praelongus_1=38, P_praelongus_2=39, P_friesii_1=38, P_praelongus_3=38, P_friesii_2=40, P_gramineus_5=39, P_gramineus_3=40, P_gramineus_4=36, P_gramineus_1=40, P_gramineus_2=40, P_crispus_3=39, P_crispus_4=40, P_crispus_1=39, P_crispus_2=40, P_crispus_5=38, S_filiformis_4=23, S_filiformis_3=31, Undetermined=39, S_filiformis_2=37, S_filiformis_1=35, S_pectinata_5=22, S_pectinata_4=31, P_polygonifolius_5=38, P_coloratus_4=34, P_natans_2=40, S_pectinata_3=33, P_natans_1=40, S_pectinata_2=36, P_coloratus_2=39, S_pectinata_1=36, P_coloratus_3=40, P_polygonifolius_1=38, P_natans_6=40, P_polygonifolius_2=38, P_coloratus_1=38, P_natans_5=39, P_natans_4=40, P_polygonifolius_3=39, P_polygonifolius_4=40, P_natans_3=39, P_natans_7=40, S_filiformis_5=22, P_acutifolius_1=40, P_acutifolius_4=38, P_acutifolius_3=38, P_acutifolius_2=38, P_perfoliatus_5=39, P_perfoliatus_4=40, P_perfoliatus_3=40, P_perfoliatus_2=39, P_perfoliatus_6=34, P_pusillus_2=36, P_pusillus_1=37, P_obtusifolius_4=37, P_nodosus_4=38, P_perfoliatus_1=38, P_pusillus_6=31, P_pusillus_5=36, P_obtusifolius_5=36, P_nodosus_3=39, P_pusillus_4=36, P_obtusifolius_2=36, P_nodosus_2=40, P_pusillus_3=39, P_obtusifolius_3=38, P_nodosus_1=39, P_obtusifolius_1=39, P_rutilus_1=36, P_rutilus_2=39, P_rutilus_3=39, P_rutilus_4=40, P_rutilus_5=35, P_alpinus_6=40, P_epihydrus_1=38, P_trichoides_4=32, P_trichoides_5=40, P_trichoides_2=34, P_trichoides_3=38, P_trichoides_1=39, P_alpinus_1=40, P_alpinus_3=34, P_alpinus_2=40, P_alpinus_5=40, P_alpinus_4=40}
+Number of gene trees: 40
+36 trees have missing taxa
+Calculating quartet distance matrix (for completion of X)
+Species tree distances calculated ...
+Will attempt to complete bipartitions from X before adding using a distance matrix.
+Building set of clusters (X) from gene trees 
+------------------------------
+gradient0: 4603
+Number of Clusters after addition by distance: 4603
+calculating extra bipartitions to be added at level 1 ...
+Adding to X using resolutions of greedy consensus ...
+Limit for sigma of degrees:2650
+polytomy size limit : 56
+discarded polytomies:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 7, 8, 8, 12, 18, 56]
+Threshold 0.0:
+polytomy of size 4; rounds with additions with at least 5 support: 2; clusters: 4623
+Threshold 0.01:
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4623
+Threshold 0.02:
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4623
+Threshold 0.05:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4623
+polytomy of size 8; rounds with additions with at least 5 support: 1; clusters: 4675
+Threshold 0.1:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4675
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4675
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 4677
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4677
+polytomy of size 12; rounds with additions with at least 5 support: 0; clusters: 4701
+Threshold 0.2:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4701
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4701
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4701
+polytomy of size 7; rounds with additions with at least 5 support: 0; clusters: 4701
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4701
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4701
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4705
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 4707
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4707
+polytomy of size 18; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4737
+Threshold 0.3333333333333333:
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 8; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 4737
+polytomy of size 56; rounds with additions with at least 5 support: 0; clusters: 4739
+max k is :4
+Number of Clusters after addition by greedy: 4739
+gradient0 in heuristiic: 4739
+partitions formed in 1.622 secs
+Dynamic Programming starting after 1.622 secs
+Using tree-based weight calculation.
+Using polytree-based weight calculation.
+Polytree max score: 142514352
+Polytree building time: 0.017 seconds.
+Number of quartet trees in the gene trees: 142514352
+Size of largest cluster: 104
+Greedy score: 90302093
+estimationFactor: 1.5781954466991148
+Sub-optimal score: 93450178
+Total Number of elements weighted: 7832
+Normalized score (portion of input quartet trees satisfied before correcting for multiple individuals): 0.6689380308868822
+Optimization score: 95333270
+Optimal tree inferred in 2.287 secs.
+(P_polygonifolius_2,(P_polygonifolius_5,(P_polygonifolius_3,(P_polygonifolius_1,(P_polygonifolius_4,((P_coloratus_1,(P_coloratus_4,(P_coloratus_3,P_coloratus_2))),(((P_praelongus_4,(P_alpinus_5,(P_praelongus_2,P_praelongus_3))),((P_natans_5,(P_natans_7,P_natans_3)),(P_natans_6,(P_natans_4,(P_natans_1,P_natans_2))))),(((P_praelongus_1,((P_alpinus_1,P_alpinus_2),(P_alpinus_6,P_alpinus_4))),(P_alpinus_3,((P_nodosus_3,(P_nodosus_2,(P_nodosus_1,P_nodosus_4))),((S_filiformis_4,S_filiformis_5),((P_perfoliatus_2,P_perfoliatus_5),(P_perfoliatus_3,(P_perfoliatus_4,P_perfoliatus_1))))))),((((P_gramineus_1,P_gramineus_5),(P_gramineus_3,(P_crispus_3,P_gramineus_2))),((P_lucens_5,P_lucens_4),(P_lucens_2,(P_lucens_1,P_lucens_3)))),((P_crispus_5,(P_gramineus_4,(P_crispus_1,(P_crispus_2,P_crispus_4)))),((P_pusillus_2,((S_filiformis_2,(P_perfoliatus_6,S_filiformis_1)),(S_filiformis_3,((S_pectinata_4,S_pectinata_5),(S_pectinata_1,(S_pectinata_2,S_pectinata_3)))))),(P_epihydrus_1,(P_berchtoldii_5,(Undetermined,((P_pusillus_6,((P_rutilus_1,(P_rutilus_5,(P_rutilus_3,(P_rutilus_4,P_rutilus_2)))),((P_friesii_1,(P_friesii_2,(P_friesii_3,P_friesii_4))),(P_pusillus_5,(P_pusillus_3,(P_pusillus_1,P_pusillus_4)))))),((P_obtusifolius_5,(P_obtusifolius_2,(P_obtusifolius_3,(P_obtusifolius_1,P_obtusifolius_4)))),((P_berchtoldii_6,((P_berchtoldii_3,P_berchtoldii_1),(P_berchtoldii_4,(P_berchtoldii_2,P_berchtoldii_7)))),((P_trichoides_5,(P_trichoides_2,(P_trichoides_1,(P_trichoides_3,P_trichoides_4)))),((P_acutifolius_2,(P_acutifolius_4,(P_acutifolius_1,P_acutifolius_3))),(P_compressus_4,(P_compressus_1,(P_compressus_3,(P_compressus_2,P_compressus_5)))))))))))))))))))))));
+Final quartet score is: 95333270
+Final normalized quartet score is: 0.6689380308868822
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 19:
+	{S_filiformis_4, S_filiformis_5}
+Extended species tree:
+(P_praelongus_1,(((P_alpinus_1,P_alpinus_2)0.44:0.03134959168808319,(P_alpinus_6,P_alpinus_4)0.82:0.16847535320905058)0.65:0.10527713672472236,((P_alpinus_3,((P_nodosus_3,(P_nodosus_2,(P_nodosus_1,P_nodosus_4)0.54:0.06948918201165495)0.5:0.07846158710278082)1:0.7614346935476838,((S_filiformis_4,S_filiformis_5)0.59:0.10745056138332908,((P_perfoliatus_2,P_perfoliatus_5)0.45:0.03347582969650905,(P_perfoliatus_3,(P_perfoliatus_4,P_perfoliatus_1)0.81:0.17491774450212114)0.58:0.09402871906211305)0.92:0.28666088097497777)0.69:0.16384913581123356)0.89:0.2233191304438587)0.42:0.056211351472486994,(((((P_gramineus_1,P_gramineus_5)0.46:0.03535192711924705,(P_gramineus_3,(P_crispus_3,P_gramineus_2)0.48:0.045654044619245604)0.88:0.2004407181241817)0.71:0.11852083169164489,((P_lucens_5,P_lucens_4)0.36:0.0,(P_lucens_2,(P_lucens_1,P_lucens_3)0.44:0.02859518094076575)0.48:0.056643552570806575)1:0.45370228824408715)0.97:0.29190277303983986,((P_crispus_5,(P_gramineus_4,(P_crispus_1,(P_crispus_2,P_crispus_4)0.42:0.02270115424604982)0.66:0.13917476409989285)0.52:0.09872268504090098)1:1.0265681748851738,((P_pusillus_2,((S_filiformis_2,(P_perfoliatus_6,S_filiformis_1)0.41:0.02014069200185929)0.98:0.32254196192737405,(S_filiformis_3,((S_pectinata_4,S_pectinata_5)0.43:0.0329679671172484,(S_pectinata_1,(S_pectinata_2,S_pectinata_3)0.48:0.058352598120211464)0.52:0.05963199310845862)0.88:0.23106154481075436)0.75:0.16514334247409446)1:0.6051606328655561)1:1.3146092061504107,(P_epihydrus_1,(P_berchtoldii_5,(Undetermined,((P_pusillus_6,((P_rutilus_1,(P_rutilus_5,(P_rutilus_3,(P_rutilus_4,P_rutilus_2)0.8:0.15999390332791988)0.42:0.0561352956370791)1:0.5165778862796369)0.95:0.31703099860968387,((P_friesii_1,(P_friesii_2,(P_friesii_3,P_friesii_4)0.54:0.1446910976130538)0.58:0.09418595125572737)1:0.4869790635953978,(P_pusillus_5,(P_pusillus_3,(P_pusillus_1,P_pusillus_4)0.96:0.29485358630570935)0.7:0.17102037774004952)0.39:0.010444915441355344)0.98:0.32481846785916646)0.63:0.15206075282856063)0.99:0.42314247579555214,((P_obtusifolius_5,(P_obtusifolius_2,(P_obtusifolius_3,(P_obtusifolius_1,P_obtusifolius_4)0.88:0.21199234900186345)0.73:0.14962703989489665)0.92:0.25141090019856793)1:0.7627268048952226,((P_berchtoldii_6,((P_berchtoldii_3,P_berchtoldii_1)0.57:0.08981245650030353,(P_berchtoldii_4,(P_berchtoldii_2,P_berchtoldii_7)0.54:0.074864770084221)1:0.6895954120551813)0.99:0.4483455833273367)0.88:0.23642856570229298,((P_trichoides_5,(P_trichoides_2,(P_trichoides_1,(P_trichoides_3,P_trichoides_4)0.47:0.04787344841553954)0.55:0.07163480748148217)0.68:0.11965025422281314)1:0.9705012098020213,((P_acutifolius_2,(P_acutifolius_4,(P_acutifolius_1,P_acutifolius_3)0.79:0.1626957072746949)0.4:0.012909507774167621)1:2.1107253300643154,(P_compressus_4,(P_compressus_1,(P_compressus_3,(P_compressus_2,P_compressus_5)0.62:0.104248378340941)0.69:0.13743645383969497)0.86:0.20653581491454906)1:1.5222197990885697)0.88:0.204100456507386)0.96:0.2732476059875045)0.47:0.039465056225564996)0.93:0.24323733743605705)0.96:0.312929650745655)0.47:0.11213676947978081)0.98:0.4105239223772801)0.98:0.3191109274511182)0.39:0.010322358319912418)0.64:0.10768298447851289)0.57:0.07509552575017059,(((P_praelongus_4,(P_alpinus_5,(P_praelongus_2,P_praelongus_3)0.91:0.224661773468349)0.54:0.1127566929646021)1:0.4621126749086645,((P_natans_5,(P_natans_7,P_natans_3)0.43:0.028174186131056468)0.61:0.0862224581384553,(P_natans_6,(P_natans_4,(P_natans_1,P_natans_2)0.49:0.060969180229813014)0.42:0.023044756577292026)0.6:0.08944262929196592)0.99:0.3597684154823592)0.45:0.046871109242255724,((P_coloratus_1,(P_coloratus_4,(P_coloratus_3,P_coloratus_2)0.7:0.15724926708254786)0.72:0.13342343268545445)1:1.519871684651273,(P_polygonifolius_4,(P_polygonifolius_1,(P_polygonifolius_3,(P_polygonifolius_5,P_polygonifolius_2)0.62:0.14167428804042062)0.4:0.01572320983456818)0.52:0.06374004743450523)1:0.7875543062965241)1:1.4967679040700694)0.48:0.07152283477661177)0.62:0.09435649716938103)1:0.5771035900060848));
+Weight calculation took 0.536850938 secs
+ASTRAL finished in 2.655 secs

@@ -1,0 +1,44 @@
+running astral
+rm: cannot remove '/home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_2_genes.treefile': No such file or directory
+P_alpinus_ can be resolved in a monophyletic group by only 0 genes
+P_praelongus_ can be resolved in a monophyletic group by only 0 genes
+P_gramineus_ can be resolved in a monophyletic group by only 0 genes
+P_perfoliatus_ can be resolved in a monophyletic group by only 0 genes
+P_crispus_ can be resolved in a monophyletic group by only 0 genes
+['gene_133', 'gene_246', 'gene_15', 'gene_231', 'gene_240', 'gene_93', 'gene_152', 'gene_2', 'gene_20']
+running astral
+rm: cannot remove '/home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_3_genes.treefile': No such file or directory
+P_alpinus_ can be resolved in a monophyletic group by only 0 genes
+P_praelongus_ can be resolved in a monophyletic group by only 0 genes
+P_pusillus_ can be resolved in a monophyletic group by only 2 genes
+P_gramineus_ can be resolved in a monophyletic group by only 0 genes
+P_perfoliatus_ can be resolved in a monophyletic group by only 0 genes
+P_crispus_ can be resolved in a monophyletic group by only 0 genes
+['gene_240', 'gene_231', 'gene_2', 'gene_133', 'gene_55', 'gene_191', 'gene_15', 'gene_93', 'gene_20', 'gene_152', 'gene_246']
+running astral
+rm: cannot remove '/home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_4_genes.treefile': No such file or directory
+P_alpinus_ can be resolved in a monophyletic group by only 0 genes
+P_praelongus_ can be resolved in a monophyletic group by only 0 genes
+P_pusillus_ can be resolved in a monophyletic group by only 2 genes
+P_gramineus_ can be resolved in a monophyletic group by only 0 genes
+P_perfoliatus_ can be resolved in a monophyletic group by only 0 genes
+P_crispus_ can be resolved in a monophyletic group by only 0 genes
+['gene_246', 'gene_15', 'gene_191', 'gene_55', 'gene_133', 'gene_52', 'gene_2', 'gene_152', 'gene_99', 'gene_93', 'gene_163', 'gene_69', 'gene_240', 'gene_231', 'gene_20']
+running astral
+rm: cannot remove '/home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_5_genes.treefile': No such file or directory
+P_alpinus_ can be resolved in a monophyletic group by only 0 genes
+P_praelongus_ can be resolved in a monophyletic group by only 0 genes
+P_pusillus_ can be resolved in a monophyletic group by only 2 genes
+P_gramineus_ can be resolved in a monophyletic group by only 0 genes
+P_perfoliatus_ can be resolved in a monophyletic group by only 0 genes
+P_crispus_ can be resolved in a monophyletic group by only 0 genes
+['gene_20', 'gene_325', 'gene_93', 'gene_55', 'gene_52', 'gene_152', 'gene_69', 'gene_326', 'gene_15', 'gene_240', 'gene_133', 'gene_163', 'gene_103', 'gene_246', 'gene_191', 'gene_231', 'gene_351', 'gene_2', 'gene_99']
+running astral
+rm: cannot remove '/home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_6_genes.treefile': No such file or directory
+P_alpinus_ can be resolved in a monophyletic group by only 0 genes
+P_praelongus_ can be resolved in a monophyletic group by only 0 genes
+P_pusillus_ can be resolved in a monophyletic group by only 2 genes
+P_gramineus_ can be resolved in a monophyletic group by only 0 genes
+P_perfoliatus_ can be resolved in a monophyletic group by only 0 genes
+P_crispus_ can be resolved in a monophyletic group by only 0 genes
+['gene_326', 'gene_325', 'gene_15', 'gene_351', 'gene_163', 'gene_69', 'gene_246', 'gene_93', 'gene_103', 'gene_191', 'gene_152', 'gene_231', 'gene_78', 'gene_4', 'gene_310', 'gene_133', 'gene_99', 'gene_160', 'gene_2', 'gene_52', 'gene_55', 'gene_20', 'gene_240', 'gene_29']

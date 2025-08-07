@@ -1,0 +1,10 @@
+running astral
+rm: cannot remove '/home/zchen/scratch/Barcoding_km/barcoding_potamogeton/results/phy11_easy353_high_resolution_phy/rsl_10_genes.treefile': No such file or directory
+P_alpinus_ can be resolved in a monophyletic group by only 0 genes
+P_praelongus_ can be resolved in a monophyletic group by only 0 genes
+P_pusillus_ can be resolved in a monophyletic group by only 2 genes
+P_gramineus_ can be resolved in a monophyletic group by only 0 genes
+S_filiformis_ can be resolved in a monophyletic group by only 6 genes
+P_perfoliatus_ can be resolved in a monophyletic group by only 0 genes
+P_crispus_ can be resolved in a monophyletic group by only 0 genes
+['gene_93', 'gene_29', 'gene_216', 'gene_351', 'gene_11', 'gene_19', 'gene_103', 'gene_283', 'gene_163', 'gene_48', 'gene_121', 'gene_4', 'gene_99', 'gene_326', 'gene_191', 'gene_152', 'gene_289', 'gene_20', 'gene_175', 'gene_274', 'gene_78', 'gene_69', 'gene_32', 'gene_174', 'gene_180', 'gene_52', 'gene_325', 'gene_166', 'gene_310', 'gene_67', 'gene_9', 'gene_133', 'gene_187', 'gene_2', 'gene_231', 'gene_15', 'gene_240', 'gene_160', 'gene_246', 'gene_55']
