@@ -29,21 +29,22 @@ mkdir $RESULT2
 function make_vcf {
 
 OUTDIR=$1
-INDIR=$2 #THE INPUTDIRECTORY WHERE THE BAM FILES ARE SAVED
-ref=$3
+INDIR=$1
+ref=$2
 
 # Prep: Converting bam files to VCF files which can then be used as input for the NucBarcoder pipeline
 #COPY THE REFERENCE FASTA
 rm $INPUTS/REFERENCE.fa* #YOU CAN COMMENT THIS OUT AFTER THE FIRST TIME
 cp $ref $INPUTS/REFERENCE.fa #YOU CAN COMMENT THIS OUT AFTER THE FIRST TIME
 
-ls $INDIR/*bam > bamlist.txt #switch this back on later. now i just want to keep three samples:Araucaria-laubenfelsii_NC01610MtM.bam, Araucaria-montana_NC01118P.bam, Araucaria-rulei_NC01190P.bam
+#make the bamlist for input
+cat $ID_SP|cut -f 1 -d ','> bamlist.txt
 
 bcftools mpileup -Ou -f $INPUTS/REFERENCE.fa --bam-list bamlist.txt | \
     bcftools call -Ou -mv | \
     bcftools filter -s LowQual -e 'QUAL<20 || DP>100' > $OUTDIR/var.flt1.vcf
 
-mv bamlist.txt $RESULT1/bamlist.csv 
+rm bamlist.txt
 #to make the ID_to_scientific_name.csv file
 #copy bamlist.csv as ID_to_scientific_name.csv and add the species name manually 
 }
@@ -73,7 +74,7 @@ low=$4
 
 ./calculate_snp.freq.py \
         -v $INDIR/var.flt2.recode.vcf \
-        -n $INDIR/ID_to_scientific_name.csv \
+        -n $ID_SP \
         -i $high \
         -l $low \
         -o $OUTDIR #output directory
@@ -95,7 +96,7 @@ low=10 #HIGHEST FREQEUENCY OF THE 'ABSENT' SNP
 
 #CONSTANTS
 REF=/mnt/shared/projects/rbge/A_projects_Markus/Araucaria/Lib2_mydata_extracted/Araucaria_input-seq_with400Ns_beginend.fas #the fasta file for mapping
-data=/mnt/shared/projects/rbge/A_projects_Markus/Araucaria/Lib2_mydata_extracted/exons/21mapped_bwa #directory where the bam files are
+ID_SP=$SCRATCH/SNPS//results/01_raw_data/ID_to_scientific_name.csv
 
 #End of parameters and paths to adjust#####################################################################################################################################
 
@@ -107,15 +108,22 @@ RESULT2=$WORKDIR/results/02_output #THE SNP STATS AND SELECTED SNPS
 
 #RUN COMMANDS
 #SET UP YOUR ENV AND WORK DIRECTORIES
+#STEP0
 #setup_evn #IF YOU HAVE AN ENV WITH ALL THE REQUIRED TOOLS INSTALLED (SEE THE FUNCTION), YOU CAN SKIP THIS AND ACTIVATE THE CORRESPONDING ENV
-#setup_workdir
+
+
+#NOW SUPPLY THE SAMPLE/SPECIES FILE!!!
+#MAKE ID_to_scientific_name.csv IN $RESULT1
+#THIS FILE TELLS YOU WHICH SAMPLES TO USE AND WHAT SPECIES IT IS
 
 #CONDA ACTIVATE snps!!!!!!
 #conda activate snps BEFORE PROCEEDING!!! THAT'S WHY I COMMENTED OUT THE REST OF THE CODES! 
+
+#setup_workdir
 #STEP1
-#make_vcf $RESULT1 $data $REF
+make_vcf $RESULT1 $REF
 #STEP 2
-#filter_vcf $RESULT1 $RESULT1
+filter_vcf $RESULT1 $RESULT1
 #STEP 3: THIS IS FAST AND YOU DON'T EVEN NEED TO SBATCH IT
 extract_loci $RESULT1 $RESULT2 $high $low
 }
