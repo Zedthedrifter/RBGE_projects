@@ -2,8 +2,8 @@
 #SBATCH --job-name="potaeasy353"
 #SBATCH --export=ALL
 #SBATCH --cpus-per-task=8
-#SBATCH --array=21-124
-#SBATCH --mem=32G #change it to the amount of memory you need
+#SBATCH --array=125,126
+#SBATCH --mem=12G #change it to the amount of memory you need
 
 function make_work_dir { 
 
@@ -12,11 +12,7 @@ function make_work_dir {
 #Create folders under result folder for each program
 #QC results
 
-
-mkdir $RENAMED
-mkdir $RESULT1
-mkdir $RESULT2
-mkdir $RESULT3
+mkdir $RESULT5
 
 }
 
@@ -53,7 +49,7 @@ INDIR=$1
 OUTDIR=$2
 ref353=$3
 
-$easy353path/easy353.py -1 ${INDIR}/${prefix}_${SLURM_ARRAY_TASK_ID}_1.fq.gz -2 ${INDIR}/${prefix}_${SLURM_ARRAY_TASK_ID}_2.fq.gz \
+$easy353path/easy353.py -1 ${INDIR}/${prefix}_${SLURM_ARRAY_TASK_ID}_R1.fq.gz -2 ${INDIR}/${prefix}_${SLURM_ARRAY_TASK_ID}_R2.fq.gz \
                         -r $ref353/353gene -o $OUTDIR/${prefix}_${SLURM_ARRAY_TASK_ID} \
                         -fk 31 -ak 41 -ft 1 -at 4 -kmer_limit 8 
 
@@ -78,12 +74,14 @@ env_name=easy353
 USER=zedchen 
 WORKDIR=Barcoding_km/barcoding_potamogeton
 prefix=potamogeton
+#SLURM_ARRAY_TASK_ID=125
 #SET UP DIRECTORIES
 easy353path=$HOME/projects/rbge/$USER/env/$env_name/bin/Easy353
 PARENT=$HOME/scratch/$WORKDIR/results
 ref353=$PARENT/353_ref_Potamogeton
 #subdirectories
 RENAMED=$HOME/scratch/$WORKDIR/results/renamed
+DATA=$HOME/projects/rbge/zedchen/barcoding/potamogeton_20250714/results/qc2_fastp/
 RESULT1=$HOME/scratch/$WORKDIR/results/qc1_trimmomatic #this step is omitted eventually
 RESULT2=$HOME/scratch/$WORKDIR/results/qc2_fastp
 RESULT3=$HOME/scratch/$WORKDIR/results/phy1_plastome
@@ -93,7 +91,9 @@ RESULT5=$HOME/scratch/$WORKDIR/results/phy3_easy353assembly
 #IN ARRAY
 #rename_cp $DATA $RENAMED $prefix
 #fastp_qc $RENAMED $RESULT2 #
-easy353_assembly $RESULT2 $RESULT5 $ref353 #use fastp cleaned reads
+#mkdir $RESULT5
+#ls ${DATA}/${prefix}_${SLURM_ARRAY_TASK_ID}_R1.fq.gz
+easy353_assembly $DATA $RESULT5 $ref353 #use fastp cleaned reads
 
 }
 

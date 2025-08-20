@@ -1,4 +1,4 @@
-#!/home/zchen/projects/rbge/zedchen/env/easy353/bin/python3
+#!/home/zchen/apps/env/easy353_2/bin/python3
 
 import subprocess as sbp
 import sys

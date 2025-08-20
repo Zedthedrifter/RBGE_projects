@@ -3,7 +3,7 @@
 #SBATCH --export=ALL
 #SBATCH --cpus-per-task=8
 #SBATCH --array=1-352
-#SBATCH --mem=32G #change it to the amount of memory you need
+#SBATCH --mem=1G #change it to the amount of memory you need
 
 function make_work_dir { 
 
@@ -60,7 +60,7 @@ OUTDIR=$2
 mkdir $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}
 cp $INDIR/gene_${SLURM_ARRAY_TASK_ID}.fasta $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}
 #remove bad taxa (sample is bad) 'repens' and other all gap contigs
-./remove_taxa.py $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}/gene_${SLURM_ARRAY_TASK_ID}.fasta repens #in this case 'repens' does not exist, just remove all gap is good enough 
+./remove_taxa.py $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}/gene_${SLURM_ARRAY_TASK_ID}.fasta #in this case 'repens' does not exist, just remove all gap is good enough 
 #remove the outliers from an alignment
 ./remove_highlyhetero.py $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}/gene_${SLURM_ARRAY_TASK_ID}.fasta $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}/gene_${SLURM_ARRAY_TASK_ID}.fasta -t 0.4 -m majority 
 iqtree -s $OUTDIR/gene_${SLURM_ARRAY_TASK_ID}/gene_${SLURM_ARRAY_TASK_ID}.fasta -bb 1000 -redo -safe
@@ -75,14 +75,16 @@ WORKDIR=Barcoding_km/barcoding_potamogeton
 PARENT=$HOME/scratch/$WORKDIR/results
 prefix=potamogeton
 ref353=$PARENT/353_ref_Potamogeton
+#SLURM_ARRAY_TASK_ID=1
 
 #a few constents
-easy353path=$HOME/projects/rbge/$USER/env/$env_name/bin/Easy353
-trimalpath=$HOME/projects/rbge/$USER/env/$env_name/bin/trimal/source
+easy353path=$HOME/apps/env/$env_name/bin/Easy353
+trimalpath=$HOME/apps/env/$env_name/bin/trimal/source
 
 #subdirectories
 RENAMED=$HOME/scratch/$WORKDIR/results/renamed
-CSV=$RENAMED/renamed.csv
+READS=/mnt/shared/projects/rbge/zedchen/barcoding/potamogeton_20250714/results/qc2_fastp/ #MOVED THE READS AWAY FOR SAFE KEEPING
+CSV=$READS/renamed.csv
 RESULT1=$HOME/scratch/$WORKDIR/results/qc1_trimmomatic #this step is omitted eventually
 RESULT2=$HOME/scratch/$WORKDIR/results/qc2_fastp
 RESULT3=$HOME/scratch/$WORKDIR/results/phy1_plastome
@@ -98,9 +100,9 @@ RESULT12=$HOME/scratch/$WORKDIR/results/phy10_easy353_singlegene_phy
 
 #IN ARRAY
 
+rename_contigs $RESULT7 $RESULT7 $CSV
 easy353_mafft $RESULT7 $RESULT8
 #easy353_trimal $RESULT8 $RESULT9 $CSV #also rename the contigs to species name
-rename_contigs $RESULT8 $RESULT8 $CSV
 iqtree_per_gene $RESULT8 $RESULT12
 }
 
