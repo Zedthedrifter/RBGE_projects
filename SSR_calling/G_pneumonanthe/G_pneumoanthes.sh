@@ -3,7 +3,7 @@
 #SBATCH --export=ALL
 #SBATCH --partition=medium
 #SBATCH --cpus-per-task=16
-#SBATCH --mem=30G 
+#SBATCH --mem=10G 
 
 function download_data {
 
@@ -70,12 +70,11 @@ quast.py $INFILE -o $OUTDIR
 function MISA_SSR {
 
 INFILE=$1
-OUTDIR=$2
 
-#remove reads <500 bp
-seqtk seq -L 500 $INFILE > ${INFILE/fasta/filtered.fasta}
+#remove reads <400 bp
+seqtk seq -L 400 $INFILE > ${INFILE/fasta/filtered.fa}
 #
-misa.pl ${INFILE/fasta/filtered.fasta}
+misa.pl ${INFILE/fasta/filtered.fa}
 }
 #===========================================================================
 
@@ -100,6 +99,7 @@ env_name=captus
 USER=zedchen 
 WORKDIR=$SCRATCH/G_pneumonanthe
 prefix=Gp
+flank_size=150
 
 #CONSTANTS
 sratools=$HOME/apps/manual/sratoolkit.3.2.1-ubuntu64/bin/
@@ -110,7 +110,7 @@ DATA=$WORKDIR/results/data
 #RNA=
 RESULT1=$WORKDIR/results/01_clean_reads #created by captus
 RESULT2=$WORKDIR/results/02_assemblies #created by captus
-RESULT3=$WORKDIR/results/04_BUSCO
+RESULT3=$WORKDIR/results/03_BUSCO
 RESULT4=$WORKDIR/results/04_SSRs
 RESULT5=$WORKDIR/results/05_
 
@@ -120,10 +120,9 @@ setup_dir
 #download_data
 
 #STEP_2 CAPTUS ASSEMBLY
-captus_assembly $DATA
-
-#move the assembly to RESULT4
-#for i in $(ls $RESULT2/*captus-asm/)
+#captus_assembly $DATA
+#MANUALLY MOVE
+#for i in $(ls $RESULT2|grep captus-asm); do mv $RESULT2/$i/*/assembly.fasta $RESULT4/${i/__captus-asm/}.fasta; done
 
 #STEP_3 BUSCO
 #run in env Busco
@@ -131,9 +130,28 @@ captus_assembly $DATA
 
 #quast_assess $infile $
 
-#STEP_4 SSR detection
-#run in base. seqtk is installed in base and MISA is universal
-#MISA_SSR $contigdir $finalctg #files will be saved to the same directory as the input file
+#STEP_4 SSR detection: run in base. seqtk is installed in base and MISA is universal
+#for i in $(ls $RESULT4/*.fasta); do MISA_SSR $i; done #files will be saved to the same directory as the input file
+
+#STEP_5: SEQ EXTRACTION
+#flanking size = 100
+#for INFILE in $(ls $RESULT2|grep captus-asm); \
+#   do ./extract_flanked.py $RESULT4/${INFILE/__captus-asm/.filtered.fa} $RESULT4/${INFILE/__captus-asm/.filtered.fa.misa} ${INFILE/__captus-asm/} $flank_size; \
+#   done
+
+function detect_conserved {
+
+flank=$1
+
+STEP_5: IDENTIFY CONSERVED SSR #this one runs ./extract_flanked.py 
+./detect_conserved_SSR.py  $RESULT4/alpine.filtered.fa $RESULT4/alpine.filtered.fa.misa alpine \
+                           $RESULT4/norway.filtered.fa $RESULT4/norway.filtered.fa.misa norway \
+                           $flank
+}
+
+detect_conserved 150
+#detect_conserved 100
+
 }
 
 main

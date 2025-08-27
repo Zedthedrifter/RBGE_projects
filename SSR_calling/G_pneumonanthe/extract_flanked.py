@@ -11,10 +11,10 @@ from Bio.SeqRecord import SeqRecord
 #standard input: ./extract_flanked.py xx.filtered.fasta xx.filtered.fasta.misa prefix desired_flank_size
 ###############################################
 
-def read_SSR_to_dict(misa):
+def read_SSR_to_dict(misa,prefix):
   with open(misa) as handle:
     keys=[x for x in next(handle).strip('\n').split('\t') if x !='']
-    misa_dict={f'SSR_{i}': {i:j for i,j in zip(keys,[x for x in line.strip('\n').split('\t') if x !=''])}for i,line in enumerate(handle)}
+    misa_dict={f'{prefix}_SSR_{i}': {i:j for i,j in zip(keys,[x for x in line.strip('\n').split('\t') if x !=''])}for i,line in enumerate(handle)}
     misa_dict={k:{i:int(j) if i in ['size', 'start', 'end'] else j for i,j in v.items() } for k,v in misa_dict.items()} #make sure int entries are actually numbers
   return(misa_dict)  
 
@@ -45,14 +45,14 @@ def write_SSR(ssrs,prefix,flank):
   SeqIO.write(records,f"{prefix}_SSR_flk_{flank}.fasta",'fasta')
 
 def main(contigs,misa,prefix,flank=150):
-  misa_dict=read_SSR_to_dict(misa)
+  misa_dict=read_SSR_to_dict(misa,prefix)
   seqs=extract_contigs(contigs,misa_dict)
   ssrs=extract_SSR(misa_dict,seqs,int(flank))
   write_SSR(ssrs,prefix,flank)
   #print(misa_dict)
 
 if __name__ == '__main__':
-  parser = argparse.ArgumentParser(description='run kDNA annotation')
+  parser = argparse.ArgumentParser(description='extract misa outputs')
   parser.add_argument('contigs', help='Name of the genome assembly, filtered.fasta', metavar='contigs')
   parser.add_argument('misa', help='Name of the misa output', metavar='misa')
   parser.add_argument('prefix', help='Prefix of the SSR output', metavar='prefix')
