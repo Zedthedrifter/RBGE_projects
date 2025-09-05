@@ -8,9 +8,9 @@ WORKDIR=zed_chen/amp_test # subdirectory on scratch where the project will be ca
 
 #install programs manually/conda
 
-mkdir $HOME/scratch/apps
+mkdir $HOME/apps/manual
 # Manually Download programs in scratch/apps
-cd $HOME/scratch/apps
+cd $HOME/apps/manual
 #Download dorado package
 git clone https://github.com/avierstr/amplicon_sorter.git
 wget https://cdn.oxfordnanoportal.com/software/analysis/dorado-0.4.1-linux-x64.tar.gz
