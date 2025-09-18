@@ -1,4 +1,4 @@
-#!/home/zchen/projects/rbge/zedchen/env/easy353/bin/python3
+#!/home/zchen/apps/env/easy353/bin/python3
 
 import subprocess as sbp
 import sys
@@ -61,7 +61,7 @@ def process_tree(treefile,mono_dict):
 
 #iterate the whole directory
 def process_treefiles(indir,outdir):
-  treefiles=sbp.check_output(f"ls {indir}/*/*treefile",shell=True).decode().strip('\n').split('\n')
+  treefiles=sbp.check_output(f"ls {indir}/*treefile",shell=True).decode().strip('\n').split('\n')
   mono_dict={treefile.split('/')[-1].replace('.fasta.treefile',''):{} for treefile in treefiles}
   for treefile in treefiles:
     process_tree(treefile,mono_dict) #add value to key
@@ -130,7 +130,7 @@ def gene_select(indir,outdir,cvg):
   except:
     print(f"no old compiled treefile to be removed")
   for gene in genes:  
-    sbp.call(f"cat {indir}/{gene}/*treefile >> {outdir}/rsl_{cvg}genes.in.treefile", shell=True)
+    sbp.call(f"cat {indir}/{gene}.fasta.treefile >> {outdir}/rsl_{cvg}genes.in.treefile", shell=True)
   f=open(f"{outdir}/astral_gene_selection.log",'a')
   f.write(f"output treefiles of {genes} to {outdir}/rsl_{cvg}_genes.treefile")
   f.write(f"the set of genes ensured {cvg} genes that resolve monophyletic group per taxa, when possible")
@@ -152,7 +152,7 @@ def gene_manual(indir,outdir,genels):
       print(f"no old compiled treefile to be removed")
     #step2: collect the trees of the selected genes
     for gene in genes:
-      sbp.call(f"cat {indir}/{gene}/*treefile >> {outdir}/manual_{pre}.in.treefile", shell=True)
+      sbp.call(f"cat {indir}/{gene}.fasta.treefile >> {outdir}/manual_{pre}.in.treefile", shell=True)
   f=open(f"{outdir}/astral_gene_selection.log",'a')
   f.write(f"output treefiles of {genes} to {outdir}/rsl_{pre}_genes.treefile\n")
   
