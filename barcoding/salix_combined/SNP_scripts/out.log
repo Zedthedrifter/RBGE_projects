@@ -1,0 +1,169 @@
+
+================== ASTRAL ===================== 
+
+This is ASTRAL version 5.7.8
+Gene trees are treated as unrooted
+16 trees read from /mnt/shared/scratch/zchen/Barcoding_km/SNP_salix/results/05_ASTRAL/CIN140_160/rsl_4genes.in.treefile
+index0
+All output trees will be *arbitrarily* rooted at S.herbacea_8
+
+======== Running the main analysis
+Number of taxa: 46 (46 species)
+Taxa: [S.herbacea_8, S.herbacea_9, S.herbacea_10, S.herbacea_7, S.herbacea_13, S.lapponum_4, S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.lapponum_5, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.lapponum_7, S.myrsinites_5, S.myrsinites_7, S.lapponum_2, S.lapponum_6, S.arbuscula_5, S.lapponum_3, S.lapponum_8, S.arbuscula_4, S.arbuscula_8, S.lapponum_9, S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6, S.herbacea_11, S.herbacea_12]
+Taxon occupancy: {S.herbacea_12=16, S.herbacea_13=16, S.herbacea_10=16, S.herbacea_11=16, S.herbacea_8=16, S.herbacea_7=16, S.lanata_8=16, S.lanata_7=16, S.lanata_9=16, S.lapponum_6=16, S.lapponum_7=16, S.lapponum_4=16, S.lanata_2=16, S.lapponum_5=16, S.lapponum_2=16, S.lapponum_3=16, S.lanata_3=16, S.lanata_6=16, S.lanata_5=16, S.lanata_10=16, S.reticulata_2=16, S.reticulata_3=16, S.reticulata_10=16, S.reticulata_4=16, S.reticulata_5=16, S.lapponum_8=16, S.reticulata_6=16, S.lapponum_9=16, S.reticulata_7=16, S.arbuscula_8=16, S.arbuscula_6=16, S.arbuscula_7=16, S.arbuscula_4=16, S.arbuscula_5=16, S.arbuscula_2=16, S.myrsinites_2=16, S.arbuscula_3=16, S.myrsinites_1=16, S.myrsinites_4=16, S.myrsinites_3=16, S.myrsinites_6=16, S.myrsinites_5=16, S.herbacea_9=16, S.myrsinites_7=16, S.reticulata_8=16, S.reticulata_9=16}
+Number of gene trees: 16
+0 trees have missing taxa
+Calculating quartet distance matrix (for completion of X)
+Species tree distances calculated ...
+Building set of clusters (X) from gene trees 
+------------------------------
+gradient0: 879
+Number of Clusters after addition by distance: 879
+calculating extra bipartitions to be added at level 1 ...
+Adding to X using resolutions of greedy consensus ...
+Limit for sigma of degrees:1200
+polytomy size limit : 22
+discarded polytomies:  [3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 22]
+Threshold 0.0:
+polytomy of size 4; rounds with additions with at least 5 support: 2; clusters: 899
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 903
+Threshold 0.01:
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 903
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 903
+Threshold 0.02:
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 903
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 903
+Threshold 0.05:
+polytomy of size 4; rounds with additions with at least 5 support: 0; clusters: 903
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 903
+Threshold 0.1:
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 905
+polytomy of size 5; rounds with additions with at least 5 support: 0; clusters: 915
+polytomy of size 3; rounds with additions with at least 5 support: 1; clusters: 919
+polytomy of size 4; rounds with additions with at least 5 support: 1; clusters: 929
+polytomy of size 5; rounds with additions with at least 5 support: 1; clusters: 941
+Threshold 0.2:
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 941
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 941
+polytomy of size 3; rounds with additions with at least 5 support: 0; clusters: 941
+polytomy of size 4; rounds with additions with at least 5 support: 1; clusters: 945
+polytomy of size 7; rounds with additions with at least 5 support: 0; clusters: 947
+polytomy of size 6; rounds with additions with at least 5 support: 0; clusters: 949
+polytomy of size 6; rounds with additions with at least 5 support: 0; clusters: 957
+polytomy of size 9; rounds with additions with at least 5 support: 0; clusters: 977
+Threshold 0.3333333333333333:
+polytomy of size 8; rounds with additions with at least 5 support: 0; clusters: 979
+polytomy of size 7; rounds with additions with at least 5 support: 0; clusters: 979
+polytomy of size 8; rounds with additions with at least 5 support: 0; clusters: 985
+polytomy of size 22; rounds with additions with at least 5 support: 0; clusters: 987
+max k is :4
+Number of Clusters after addition by greedy: 987
+gradient0 in heuristiic: 987
+partitions formed in 0.394 secs
+Dynamic Programming starting after 0.394 secs
+Using tree-based weight calculation.
+Using polytree-based weight calculation.
+Polytree max score: 2610960
+Polytree building time: 0.007 seconds.
+Number of quartet trees in the gene trees: 2610960
+Size of largest cluster: 46
+Greedy score: 1571884
+estimationFactor: 1.6610386008127827
+Sub-optimal score: 1683971
+Total Number of elements weighted: 1618
+Normalized score (portion of input quartet trees satisfied before correcting for multiple individuals): 0.653798985813647
+Optimization score: 1707043
+Optimal tree inferred in 0.498 secs.
+(S.reticulata_9,((S.reticulata_3,S.reticulata_4),((S.reticulata_6,(S.reticulata_2,S.reticulata_7)),((S.reticulata_5,(S.reticulata_8,S.reticulata_10)),((((S.lanata_5,S.lanata_6),(S.lanata_7,S.lanata_9)),(S.lanata_3,(S.lanata_8,(S.lanata_2,S.lanata_10)))),((S.herbacea_9,(S.herbacea_12,((S.herbacea_8,S.herbacea_11),(S.herbacea_13,(S.herbacea_10,S.herbacea_7))))),((S.lapponum_9,((S.lapponum_5,(S.lapponum_7,S.lapponum_6)),(S.lapponum_4,(S.lapponum_2,(S.lapponum_3,S.lapponum_8))))),((S.arbuscula_4,((S.arbuscula_5,S.arbuscula_8),(S.arbuscula_7,(S.arbuscula_3,(S.arbuscula_2,S.arbuscula_6))))),((S.myrsinites_5,S.myrsinites_7),((S.myrsinites_2,S.myrsinites_6),(S.myrsinites_3,(S.myrsinites_1,S.myrsinites_4))))))))))));
+Final quartet score is: 1707043
+Final normalized quartet score is: 0.653798985813647
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.herbacea_10, S.herbacea_7}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.herbacea_10, S.herbacea_7, S.herbacea_13}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_7, S.lapponum_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_5, S.lapponum_7, S.lapponum_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_3, S.lapponum_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_2, S.lapponum_3, S.lapponum_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_4, S.lapponum_2, S.lapponum_3, S.lapponum_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_4, S.lapponum_5, S.lapponum_7, S.lapponum_2, S.lapponum_6, S.lapponum_3, S.lapponum_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_4, S.lapponum_5, S.lapponum_7, S.lapponum_2, S.lapponum_6, S.lapponum_3, S.lapponum_8, S.lapponum_9}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_5, S.arbuscula_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_2, S.arbuscula_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_2, S.arbuscula_6, S.arbuscula_3}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.arbuscula_5, S.arbuscula_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.arbuscula_5, S.arbuscula_4, S.arbuscula_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.myrsinites_5, S.myrsinites_7}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.myrsinites_2, S.myrsinites_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.myrsinites_1, S.myrsinites_4}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.myrsinites_1, S.myrsinites_3, S.myrsinites_4}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.myrsinites_5, S.myrsinites_7}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.myrsinites_5, S.myrsinites_7, S.arbuscula_5, S.arbuscula_4, S.arbuscula_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_4, S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.lapponum_5, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.lapponum_7, S.myrsinites_5, S.myrsinites_7, S.lapponum_2, S.lapponum_6, S.arbuscula_5, S.lapponum_3, S.lapponum_8, S.arbuscula_4, S.arbuscula_8, S.lapponum_9}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_5, S.lanata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_7, S.lanata_9}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_2, S.lanata_10}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_2, S.lanata_10, S.lanata_8}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_8, S.reticulata_10}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_5, S.reticulata_8, S.reticulata_10}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_2, S.reticulata_7}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_2, S.reticulata_7, S.reticulata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_3, S.reticulata_4}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_3, S.reticulata_4, S.reticulata_9}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.lapponum_4, S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.lapponum_5, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.lapponum_7, S.myrsinites_5, S.myrsinites_7, S.lapponum_2, S.lapponum_6, S.arbuscula_5, S.lapponum_3, S.lapponum_8, S.arbuscula_4, S.arbuscula_8, S.lapponum_9, S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.herbacea_9, S.lapponum_4, S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.lapponum_5, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.lapponum_7, S.myrsinites_5, S.myrsinites_7, S.lapponum_2, S.lapponum_6, S.arbuscula_5, S.lapponum_3, S.lapponum_8, S.arbuscula_4, S.arbuscula_8, S.lapponum_9, S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.herbacea_9, S.lapponum_4, S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.lapponum_5, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.lapponum_7, S.myrsinites_5, S.myrsinites_7, S.lapponum_2, S.lapponum_6, S.arbuscula_5, S.lapponum_3, S.lapponum_8, S.arbuscula_4, S.arbuscula_8, S.lapponum_9, S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6, S.herbacea_12}
+You may want to ignore posterior probabilities and other statistics related to the following branch branch because the effective number of genes impacting it is only 16:
+	{S.herbacea_9, S.herbacea_10, S.herbacea_7, S.herbacea_13, S.lapponum_4, S.arbuscula_2, S.arbuscula_6, S.arbuscula_3, S.arbuscula_7, S.lapponum_5, S.myrsinites_1, S.myrsinites_3, S.myrsinites_4, S.myrsinites_2, S.myrsinites_6, S.lapponum_7, S.myrsinites_5, S.myrsinites_7, S.lapponum_2, S.lapponum_6, S.arbuscula_5, S.lapponum_3, S.lapponum_8, S.arbuscula_4, S.arbuscula_8, S.lapponum_9, S.lanata_2, S.lanata_10, S.lanata_8, S.lanata_3, S.reticulata_2, S.reticulata_7, S.reticulata_6, S.reticulata_3, S.reticulata_4, S.reticulata_9, S.reticulata_5, S.reticulata_8, S.reticulata_10, S.lanata_7, S.lanata_9, S.lanata_5, S.lanata_6, S.herbacea_12}
+Extended species tree:
+(S.herbacea_8,(S.herbacea_11,((S.herbacea_13,(S.herbacea_10,S.herbacea_7)1:2.2769253462134684)0.77:0.23663988562926852,(S.herbacea_12,(S.herbacea_9,(((S.lapponum_9,((S.lapponum_5,(S.lapponum_7,S.lapponum_6)0.46:0.04906379941535887)0.45:0.0424612521504828,(S.lapponum_4,(S.lapponum_2,(S.lapponum_3,S.lapponum_8)0.43:0.03409025762519628)0.44:0.035278912435678364)0.65:0.1490939375393086)0.55:0.09152478380517637)0.81:0.2578202822808221,((S.arbuscula_4,((S.arbuscula_5,S.arbuscula_8)0.72:0.19103588710471375,(S.arbuscula_7,(S.arbuscula_3,(S.arbuscula_2,S.arbuscula_6)0.71:0.18259519203988145)0.62:0.13113330994050984)0.48:0.06453852113757118)0.66:0.1580704940506953)0.99:0.5661860380707163,((S.myrsinites_5,S.myrsinites_7)0.44:0.04110483994711613,((S.myrsinites_2,S.myrsinites_6)0.6:0.14403937022293783,(S.myrsinites_3,(S.myrsinites_1,S.myrsinites_4)0.96:0.46210060405441705)0.91:0.344502962028969)0.68:0.16527314029217144)1:0.8155462898341007)0.51:0.07898815436656734)0.42:0.02240505027909653,((((S.lanata_5,S.lanata_6)0.53:0.08319894385497381,(S.lanata_7,S.lanata_9)0.65:0.15783392524355477)0.65:0.14543298464099122,(S.lanata_3,(S.lanata_8,(S.lanata_2,S.lanata_10)0.72:0.19001178969493118)0.77:0.222618479104719)0.58:0.10454385575127019)0.94:0.40255352936923927,((S.reticulata_5,(S.reticulata_8,S.reticulata_10)0.4:0.01933761915015806)0.92:0.3576406610586916,((S.reticulata_6,(S.reticulata_2,S.reticulata_7)0.48:0.17279119194326056)0.87:0.3328025077322507,((S.reticulata_3,S.reticulata_4)0.63:0.1776811772374525,S.reticulata_9)0.83:0.26682271802907065)0.57:0.13310248418989665)1:1.5903514465435598)0.84:0.27570082889176817)0.98:0.5508855271499958)0.67:0.1627851347435903)0.55:0.11603823517700525)0.59:0.11948821892798134));
+Weight calculation took 0.05488794 secs
+ASTRAL finished in 0.594 secs
