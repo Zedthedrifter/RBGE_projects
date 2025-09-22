@@ -123,13 +123,13 @@ setup_workdir
 #conda activate snps BEFORE PROCEEDING!!! THAT'S WHY I COMMENTED OUT THE REST OF THE CODES! 
 
 #STEP1
-bam_to_vcf $PARENTS $RESULT1 $REF
+#bam_to_vcf $PARENTS $RESULT1 $REF
 
 #STEP 2: THIS IS FAST AND YOU DON'T EVEN NEED TO SBATCH IT
-extract_loci $RESULT1 $RESULT2 $NAME $high $low
+#extract_loci $RESULT1 $RESULT2 $NAME $high $low
 
 #STEP 3: MAKE VCF FILES OF THE QUERIES
-bam_to_vcf $SAMPLES $RESULT3 $REF
+#bam_to_vcf $SAMPLES $RESULT3 $REF
 
 #STEP 4: IDENTIFY SPECIES BASED ON SNPS
 #list of inputs: sample_vcf, output dir, species specific SNPs csv, $high, $low
