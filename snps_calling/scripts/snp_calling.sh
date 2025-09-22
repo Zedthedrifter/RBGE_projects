@@ -2,7 +2,7 @@
 #SBATCH --job-name="Bcassembly" 
 #SBATCH --export=ALL
 #SBATCH --partition=medium
-#SBATCH --mem=3G 
+#SBATCH --mem=64G 
 #SBATCH --cpus-per-task=8
 
 
@@ -15,72 +15,67 @@ conda install -c bioconda vcftools -y --name $ENV
 conda install -c bioconda pandas -y --name $ENV #FOR THE EXTRACTION STAGE
 }
 
-function setup_workdir {
-
-mkdir $WORKDIR
-mkdir $WORKDIR/results
-mkdir $INPUTS
-mkdir $RESULT1
-mkdir $RESULT2
-
-}
-
 #STEP1
-function make_vcf {
+#MAKE VCF FROM BAM FILES
+function bam_to_vcf {
 
-OUTDIR=$1
-INDIR=$1
-ref=$2
+BAMLIST=$1 #THE DIRECTORIES OF THE SAMPLE BAM FILES TO BE PROCESSED: TRAINING SET AS PARENT OR HYBRIDS ETC. 
+OUTDIR=$2
+ref=$3
 
-# Prep: Converting bam files to VCF files which can then be used as input for the NucBarcoder pipeline
+#Prep: Converting bam files to VCF files which can then be used as input for the NucBarcoder pipeline
 #COPY THE REFERENCE FASTA
 rm $INPUTS/REFERENCE.fa* #YOU CAN COMMENT THIS OUT AFTER THE FIRST TIME
 cp $ref $INPUTS/REFERENCE.fa #YOU CAN COMMENT THIS OUT AFTER THE FIRST TIME
 
-#make the bamlist for input
-cat $ID_SP|cut -f 1 -d ','> bamlist.txt
-
-bcftools mpileup -Ou -f $INPUTS/REFERENCE.fa --bam-list bamlist.txt | \
-    bcftools call -Ou -mv | \
-    bcftools filter -s LowQual -e 'QUAL<20 || DP>100' > $OUTDIR/var.flt1.vcf
-
-rm bamlist.txt
-#to make the ID_to_scientific_name.csv file
-#copy bamlist.csv as ID_to_scientific_name.csv and add the species name manually 
+bcftools mpileup -Ob -f $INPUTS/REFERENCE.fa --bam-list $BAMLIST | \
+    bcftools call -Ob -mv| \
+    bcftools filter -s LowQual -e 'QUAL<30 || DP<100' > $OUTDIR/var.flt1.bgzf #filter in the next step. no need to add redundant step
+#FILTERING
+vcftools --bcf $OUTDIR/var.flt1.bgzf --out $OUTDIR/var.flt2 --recode --recode-INFO-all \
+      --minQ 30 --max-missing 0.95 --minDP 7  \
+      --min-alleles 2  --max-alleles 2 --remove-indels  --hwe 0.05
+#
+#--maxDP 100
 }
 
 #STEP2
-function filter_vcf {
-
-INDIR=$1
-OUTDIR=$2
-
-# Prep: Filter SNPs using vcftools
-
-vcftools --vcf $INDIR/var.flt1.vcf --out $OUTDIR/var.flt2 --recode --recode-INFO-all \
-      --minQ 30 --max-missing 0.95 --minDP 7 --maxDP 100 \
-      --min-alleles 2 --max-alleles 2 --remove-indels  --hwe 0.05
-      #I removed --mac 5, which requires allele count to be >=5. Allele count is simply the number of times that allele appears over all individuals at that site. this varies for sample size etc. 
-}
-
-#STEP3
 #YOU NEED TO MAKE A CSV FILE FOR SAMPLE NAMES (JUST COPY THE bamlist.txt FILE IN YOUR CURRENT DIRECTORY AND $RESULT1) AND SPECIES IN $RESULT1, NAME IT ID_to_scientific_name.csv
 function extract_loci {
 
 INDIR=$1
 OUTDIR=$2
-high=$3
-low=$4
+NAME=$3
+high=$4
+low=$5
 
-./calculate_snp.freq.py \
+./calculate_snp.freq.py specifi_SNPs \
         -v $INDIR/var.flt2.recode.vcf \
-        -n $ID_SP \
+        -n $NAME \
         -i $high \
         -l $low \
         -o $OUTDIR #output directory
 
 }
- 
+
+
+#FOR A GIVEN SAMPLE, CHECK SPECIES SPECIFIC SNPS FROM THE TRAINING DATASET
+function species_classifier {
+
+VCF=$1
+OUTDIR=$2
+PARENT_SNP=$3
+high=$4
+low=$5
+
+./calculate_snp.freq.py find_species \
+        -v $VCF \
+        -n $PARENT_SNP \
+        -i $high \
+        -l $low \
+        -o $OUTDIR #output directory
+
+}
 #===================================================================
 
 function main {
@@ -89,14 +84,16 @@ function main {
 
 #UNIVERSAL VARIABLES
 ENV=snps 
-WORKDIR=$SCRATCH/SNPS #set up in project, not for anything too big
-high=90 #LOWEST FREQUENCY OF THE 'PRESENT' SNP
-low=10 #HIGHEST FREQEUENCY OF THE 'ABSENT' SNP
+WORKDIR=$SCRATCH/SNPS/hybrids #the first project: WORKDIR=$SCRATCH/SNPS
+high=100 #LOWEST FREQUENCY OF THE 'PRESENT' SNP
+low=0 #HIGHEST FREQEUENCY OF THE 'ABSENT' SNP
 
 
-#CONSTANTS
+#CONSTANTS PROVIDED BY USER
 REF=/mnt/shared/projects/rbge/A_projects_Markus/Araucaria/Lib2_mydata_extracted/Araucaria_input-seq_with400Ns_beginend.fas #the fasta file for mapping
-ID_SP=$SCRATCH/SNPS//results/01_raw_data/ID_to_scientific_name.csv
+NAME=/mnt/shared/projects/rbge/A_projects_Markus/Araucaria/bamlist_102.csv #SAMPLE BAM & CORRESPONDING SPECIES
+PARENTS='FULL PATH TO THE LIST OF BAMS AS TRAINING SET FOR SPECIES SPECIFIC SNPS'#TRAINING SET FOR SPECIES SPECIFIC SNPS
+SAMPLES=/mnt/shared/scratch/pholling/SNPS/hybrids/results/01_raw_data/hybrids.txt #UNCLASSIFIED SAMPLES
 
 #End of parameters and paths to adjust#####################################################################################################################################
 
@@ -104,28 +101,39 @@ ID_SP=$SCRATCH/SNPS//results/01_raw_data/ID_to_scientific_name.csv
 INPUTS=$WORKDIR/results/00_inputs #JUST A PLACE TO PUT COPIES OF REF FILE AND THE FAI INDEXING
 RESULT1=$WORKDIR/results/01_raw_data #WHERE THE VCF FILES GO
 RESULT2=$WORKDIR/results/02_output #THE SNP STATS AND SELECTED SNPS
+RESULT3=$WORKDIR/results/03_sample_vcf
+RESULT4=$WORKDIR/results/04_sample_SNPs
 
+function setup_workdir {
 
+mkdir $WORKDIR
+mkdir $WORKDIR/results
+mkdir $INPUTS
+mkdir $RESULT1
+mkdir $RESULT2
+mkdir $RESULT3
+mkdir $RESULT4
+}
 #RUN COMMANDS
 #SET UP YOUR ENV AND WORK DIRECTORIES
-#STEP0
 #setup_evn #IF YOU HAVE AN ENV WITH ALL THE REQUIRED TOOLS INSTALLED (SEE THE FUNCTION), YOU CAN SKIP THIS AND ACTIVATE THE CORRESPONDING ENV
-
-
-#NOW SUPPLY THE SAMPLE/SPECIES FILE!!!
-#MAKE ID_to_scientific_name.csv IN $RESULT1
-#THIS FILE TELLS YOU WHICH SAMPLES TO USE AND WHAT SPECIES IT IS
+setup_workdir
 
 #CONDA ACTIVATE snps!!!!!!
 #conda activate snps BEFORE PROCEEDING!!! THAT'S WHY I COMMENTED OUT THE REST OF THE CODES! 
 
-#setup_workdir
 #STEP1
-make_vcf $RESULT1 $REF
-#STEP 2
-filter_vcf $RESULT1 $RESULT1
-#STEP 3: THIS IS FAST AND YOU DON'T EVEN NEED TO SBATCH IT
-extract_loci $RESULT1 $RESULT2 $high $low
+bam_to_vcf $PARENTS $RESULT1 $REF
+
+#STEP 2: THIS IS FAST AND YOU DON'T EVEN NEED TO SBATCH IT
+extract_loci $RESULT1 $RESULT2 $NAME $high $low
+
+#STEP 3: MAKE VCF FILES OF THE QUERIES
+bam_to_vcf $SAMPLES $RESULT3 $REF
+
+#STEP 4: IDENTIFY SPECIES BASED ON SNPS
+#list of inputs: sample_vcf, output dir, species specific SNPs csv, $high, $low
+species_classifier $RESULT3/var.flt2.recode.vcf $RESULT4 $RESULT2/specific_SNP_freq_0_100.csv $high $low
 }
 
 main
