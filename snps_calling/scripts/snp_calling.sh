@@ -1,8 +1,8 @@
 #!/bin/bash
-#SBATCH --job-name="Bcassembly" 
+#SBATCH --job-name="SNP analysis" 
 #SBATCH --export=ALL
 #SBATCH --partition=medium
-#SBATCH --mem=64G 
+#SBATCH --mem=32G 
 #SBATCH --cpus-per-task=8
 
 
@@ -30,11 +30,20 @@ cp $ref $INPUTS/REFERENCE.fa #YOU CAN COMMENT THIS OUT AFTER THE FIRST TIME
 
 bcftools mpileup -Ob -f $INPUTS/REFERENCE.fa --bam-list $BAMLIST | \
     bcftools call -Ob -mv| \
-    bcftools filter -s LowQual -e 'QUAL<30 || DP<100' > $OUTDIR/var.flt1.bgzf #filter in the next step. no need to add redundant step
+    bcftools filter -Ob -s LowQual -e 'QUAL<30 || DP<100' > $OUTDIR/var.flt1.bgzf #filter in the next step. no need to add redundant step?? (it's nice to see PASS/Low Qual though)
+
 #FILTERING
-vcftools --bcf $OUTDIR/var.flt1.bgzf --out $OUTDIR/var.flt2 --recode --recode-INFO-all \
-      --minQ 30 --max-missing 0.95 --minDP 7  \
-      --min-alleles 2  --max-alleles 2 --remove-indels  --hwe 0.05
+#--bcf can read bgzf input as well
+vcftools --bcf $OUTDIR/var.flt1.bgzf \
+         --out $OUTDIR/var.flt2 \
+         --recode --recode-INFO-all \
+         --minQ 30 \
+         --max-missing 0.95 \
+         --minDP 7  \
+         --min-alleles 2 \
+         --max-alleles 2 \
+         --remove-indels \
+         --hwe 0.05
 #
 #--maxDP 100
 }
@@ -49,7 +58,8 @@ NAME=$3
 high=$4
 low=$5
 
-./calculate_snp.freq.py specifi_SNPs \
+#./calculate_snp.freq.py specifi_SNPs \
+./species_specific_allele.py specifi_SNPs \
         -v $INDIR/var.flt2.recode.vcf \
         -n $NAME \
         -i $high \
@@ -68,7 +78,8 @@ PARENT_SNP=$3
 high=$4
 low=$5
 
-./calculate_snp.freq.py find_species \
+#./calculate_snp.freq.py find_species \
+./species_specific_allele.py find_species \
         -v $VCF \
         -n $PARENT_SNP \
         -i $high \
@@ -85,7 +96,7 @@ function main {
 #UNIVERSAL VARIABLES
 ENV=snps 
 WORKDIR=$SCRATCH/SNPS/hybrids #the first project: WORKDIR=$SCRATCH/SNPS
-high=100 #LOWEST FREQUENCY OF THE 'PRESENT' SNP
+high=50 #LOWEST FREQUENCY OF THE 'PRESENT' SNP
 low=0 #HIGHEST FREQEUENCY OF THE 'ABSENT' SNP
 
 
@@ -133,7 +144,7 @@ setup_workdir
 
 #STEP 4: IDENTIFY SPECIES BASED ON SNPS
 #list of inputs: sample_vcf, output dir, species specific SNPs csv, $high, $low
-species_classifier $RESULT3/var.flt2.recode.vcf $RESULT4 $RESULT2/specific_SNP_freq_0_100.csv $high $low
+species_classifier $RESULT3/var.flt2.recode.vcf $RESULT4 $RESULT2/hq_specific_allele_freq.csv $high $low
 }
 
 main
